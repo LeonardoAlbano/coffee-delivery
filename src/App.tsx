@@ -1,7 +1,7 @@
-import { Button } from "./components/Button";
+import { Button } from './components/Button/Button'
 
-export function App(){
-  return(
+export function App() {
+  return (
     <>
       <Button />
     </>
