@@ -8,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 
+    :root{
+        
+        font-size: 62.5%;
+        font-family: "Jost", sans-serif;
+    }
+
     //Ao cliclar em algum elemento:
     :focus {
         outline: 0;
@@ -24,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
         font-family: "Jost", sans-serif;
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 1.6rem;
 
     }
 `
