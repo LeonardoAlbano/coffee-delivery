@@ -1,15 +1,10 @@
-import { Hero, HeroContent, Heading, Info } from "./styles"
+import { Hero, HeroContent, Heading, Info, CoffeList } from "./styles"
 import { Coffee, Package, ShoppingCartIcon, Timer } from "lucide-react"
 
 import heroImg from '../../../public/images/hero.svg'
 import HeroBG from '../../../public/images/hero-bg.svg'
 
-import { useTheme } from 'styled-components'
-
-
 export function Home() {
-
-    const theme = useTheme()
 
     return(
         <div>
@@ -50,6 +45,12 @@ export function Home() {
 
               <img src={HeroBG} id="hero-bg" alt="Background" />
             </Hero>
+
+            <CoffeList>
+                <h2>Nossos Cafés</h2>
+
+                <div></div>
+            </CoffeList>
 
         </div>
     )

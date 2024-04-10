@@ -87,3 +87,15 @@ export const Info = styled.div`
 
 `;
 
+export const CoffeList = styled.section`
+    max-width: 116.0rem;
+    padding: 3.2rem 2.0rem 15.0rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5.4rem;
+
+    
+`
+
