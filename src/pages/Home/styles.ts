@@ -1,101 +1,88 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+
+import { mixins } from '../../styles/mixins'
 
 export const Hero = styled.section`
-    position: relative;
-    
+  position: relative;
 
-    img#hero-bg{
-        position: absolute;
-        top: 0;
-        left: 0;
-        max-height: 54.4rem;
-        width: 100vw;
-        object-fit: cover;
-
-    }
-`;
-
-export const HeroContent = styled.div`
-    max-width: 116.0rem;
-    padding: 9.2rem 2.0rem;
-    margin: 0 auto;
-
-    display: flex;
-    gap: 5.6rem;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    > div {
-        display: flex;
-        flex-direction: column;
-        gap: 6.6rem;
-    }
-`;
-
-export const Heading = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    gap: 1.6rem;
-
-    > h1{
-        font-size: 5.0rem;
-        font-weight: 900;
-        color: ${( props ) => props.theme["base-title"]};
-    }
-
-    > span{
-        font-size: 2.0rem;
-        font-weight: 500;
-        color: ${( props ) => props.theme["base-subtitle"]};
-    }
-
-`;
-
-export const Info = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 2.0rem;
-
-    > div {
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-
-        svg{
-            padding: .8rem;
-            border-radius: 99.9rem;
-            color: ${( props ) => props.theme.white};
-        }
-    }
-
-    > div:nth-child(1) svg {
-        background-color: ${( props ) => props.theme["yellow-dark"]};
-    }
-
-    > div:nth-child(2) svg {
-        background-color: ${( props ) => props.theme["base-title"]};
-    }
-
-    > div:nth-child(3) svg {
-        background-color: ${( props ) => props.theme["yellow"]};
-    }
-
-    > div:nth-child(4) svg {
-        background-color: ${( props ) => props.theme.purple};
-    }
-
-`;
-
-export const CoffeList = styled.section`
-    max-width: 116.0rem;
-    padding: 3.2rem 2.0rem 15.0rem;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 5.4rem;
-
-    
+  img#hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 544px;
+    width: 100vw;
+    object-fit: cover;
+  }
 `
 
+export const HeroContent = styled.div`
+  max-width: 1160px;
+  padding: 92px 20px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 66px;
+  }
+`
+
+export const Heading = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  > h1 {
+    ${mixins.fonts.titleXL}
+    color: ${({ theme }) => theme.colors['base-title']}
+  }
+
+  > span {
+    ${mixins.fonts.textL}
+    color: ${({ theme }) => theme.colors['base-subtitle']}
+  }
+`
+
+export const Info = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    svg {
+      padding: 8px;
+      border-radius: 999px;
+    }
+  }
+`
+
+export const CoffeeList = styled.section`
+  max-width: 1160px;
+  padding: 32px 20px 150px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+
+  > h2 {
+    ${mixins.fonts.titleL}
+    color: ${({ theme }) => theme.colors['base-subtitle']}
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 32px;
+  }
+`

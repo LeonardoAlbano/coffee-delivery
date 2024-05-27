@@ -1,24 +1,29 @@
-import { MapPin, ShoppingCart } from "lucide-react"
-import { ContainerHeader, NavBar } from "./styles"
+import { MapPin, ShoppingCart } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
+
+import { useCart } from '../../hook/useCart'
+import { Aside, Container } from './styles'
 
 export function Header() {
-    return(
-        <ContainerHeader>
-            <a href="">
-                <img src="/logo.svg" alt="Coffe Delivery" />
-            </a>
+  const { cart } = useCart()
 
-            <NavBar>
-                <div>
-                    <MapPin size={22} />
-                    <span>Joinville, SC</span>
-                </div>
+  return (
+    <Container>
+      <Link to="/">
+        <img src="/logo.svg" alt="Coffee Delivery" />
+      </Link>
 
-                <a href="">
-                    <ShoppingCart size={22} />
-                    <span>1</span>
-                </a>
-            </NavBar>
-        </ContainerHeader>
-    )
+      <Aside>
+        <div>
+          <MapPin size={22} weight="fill" />
+          <span>Joinville, SC</span>
+        </div>
+
+        <Link to={`cart`} aria-disabled={cart.length === 0}>
+          <ShoppingCart size={22} weight="fill" />
+          {cart.length > 0 ? <span>{cart.length}</span> : null}
+        </Link>
+      </Aside>
+    </Container>
+  )
 }

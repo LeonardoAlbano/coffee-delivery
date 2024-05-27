@@ -1,70 +1,72 @@
 import styled from 'styled-components'
 
-export const ContainerHeader = styled.header`
-    max-width: 116.0rem;
-    padding: 3.2rem 2.0rem;
-    margin: 0 auto;
+import { mixins } from '../../styles/mixins'
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+export const Container = styled.header`
+  max-width: 1160px;
+  padding: 32px 20px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
-export const NavBar = styled.nav`
+export const Aside = styled.aside`
+  display: flex;
+  gap: 12px;
+
+  div {
     display: flex;
-    gap: 1.2rem;
+    align-items: center;
+    gap: 4px;
 
-    div {
-        display: flex;
-        align-items: center;
-        gap: .4rem;
+    background-color: ${({ theme }) => theme.colors['purple-light']};
 
-        background-color: ${(props) => props.theme['purple-light']};
-
-        svg{
-            color: ${(props) => props.theme.purple};
-        }
-
-        span {
-            color: ${(props => props.theme['purple-dark'])}
-        }
-
-        padding: 1rem .8rem;
-        border-radius: .6rem;
+    svg {
+      color: ${({ theme }) => theme.colors.purple};
     }
 
-    a {
-        display: flex;
-        align-items: center;
-
-        background-color: ${( props ) => props.theme['yellow-light']};
-        color: ${( props ) => props.theme['yellow-dark']};
-
-        padding: .8rem;
-        border-radius: .6rem;
-
-        position: relative;
-
-        span {
-            font-weight: bold;
-            color: ${( props ) => props.theme.white};
-
-            background-color: ${( props ) => props.theme['yellow-dark']};
-            border-radius: 50%;
-
-            width: 2.0rem;
-            height: 2.0rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translate(50%, -50%);
-        }
-
+    span {
+      color: ${({ theme }) => theme.colors['purple-dark']};
     }
 
-    
-`;
+    padding: 10px 8px;
+    border-radius: 6px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+
+    background-color: ${({ theme }) => theme.colors['yellow-light']};
+    color: ${({ theme }) => theme.colors['yellow-dark']};
+
+    padding: 8px;
+    border-radius: 6px;
+
+    position: relative;
+
+    &[aria-disabled='true'] {
+      pointer-events: none;
+    }
+
+    span {
+      ${mixins.fonts.textS};
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors['yellow-dark']};
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      transform: translate(50%, -50%);
+    }
+  }
+`
